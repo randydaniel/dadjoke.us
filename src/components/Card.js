@@ -4,9 +4,13 @@ function Card() {
 
   const [msg, setMsg] = React.useState("click the button")
   const handler = () =>
-    fetch("/.netlify/functions/node-fetch", { headers: { accept: "Accept: application/json" } })
-      .then((x) => x.json())
-      .then(({ msg }) => setMsg(msg))
+    fetch("/.netlify/functions/node-fetch", { 
+      headers: { 
+        accept: "Accept: application/json" 
+      } 
+    })
+    .then((x) => x.json())
+    .then(({ msg }) => setMsg(msg))
   
   return (
     <div className="App">
