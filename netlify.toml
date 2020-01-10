@@ -1,4 +1,4 @@
 [build]
-  command = "yarn build && cd .netlify/functions/node-fetch && yarn"
-  functions = ".netlify/functions"
+  command = "yarn build && cd functions/node-fetch && yarn"
+  functions = "functions"
   publish = "build"
