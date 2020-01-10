@@ -1,26 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import Axios from 'axios';
+import React from 'react'
 
 function Card() {
 
-  const [joke, setJoke] = useState("")
-  const [fetch, setFetch] = useState(false)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await Axios("https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/type/general")
-    //  console.log(result.data)
-    setJoke(`${result.data[0].setup} ${result.data[0].punchline}`)
-    }
-    fetchData()
-  }, [fetch])
-
+  const [msg, setMsg] = React.useState("click the button")
+  const handler = () =>
+    fetch("/.netlify/functions/node-fetch", { headers: { accept: "Accept: application/json" } })
+      .then((x) => x.json())
+      .then(({ msg }) => setMsg(msg))
+  
   return (
-    <div>
-      <h1>{joke}</h1>
-      <button onClick={() => setFetch(!fetch)}>Another One!</button>
+    <div className="App">
+      <header className="App-header">
+        <p>{msg}</p>
+        <button onClick={handler}>Get a joke!</button>
+      </header>
     </div>
-  );
+  )
 }
 
 export default Card
