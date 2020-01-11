@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import './Card.scss';
 
 function Card() {
 
@@ -15,11 +16,9 @@ function Card() {
   }, [anotherJoke])
   
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>{joke}</p>
-        <button onClick={() => setAnotherJoke(!anotherJoke)}>Get a joke!</button>
-      </header>
+    <div className="Card">
+      <p>{joke}</p>
+      <button onClick={() => setAnotherJoke(!anotherJoke)}>Get a joke!</button>
     </div>
   )
 }
