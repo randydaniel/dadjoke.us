@@ -13,13 +13,13 @@ exports.handler = async function(event, context) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ msg: data.joke })
+      body: JSON.stringify({ joke: data.joke })
     }
   } catch (err) {
     console.log(err) // output to netlify function log
     return {
       statusCode: 500,
-      body: JSON.stringify({ msg: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
+      body: JSON.stringify({ joke: err.message }) // Could be a custom message or object i.e. JSON.stringify(err)
     }
   }
 }

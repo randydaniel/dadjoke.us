@@ -1,22 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Card() {
 
-  const [msg, setMsg] = React.useState("click the button")
-  const handler = () =>
-    fetch("/.netlify/functions/node-fetch", { 
-      headers: { 
-        accept: "Accept: application/json" 
-      } 
-    })
-    .then((x) => x.json())
-    .then(({ msg }) => setMsg(msg))
+  const [joke, setJoke] = useState(true)
+  const [anotherJoke, setAnotherJoke] = useState(false)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      fetch("/.netlify/functions/node-fetch")
+      .then((x) => x.json())
+      .then(({ joke }) => setJoke(joke))
+    }
+    fetchData()
+  }, [anotherJoke])
   
   return (
     <div className="App">
       <header className="App-header">
-        <p>{msg}</p>
-        <button onClick={handler}>Get a joke!</button>
+        <p>{joke}</p>
+        <button onClick={() => setAnotherJoke(!anotherJoke)}>Get a joke!</button>
       </header>
     </div>
   )
