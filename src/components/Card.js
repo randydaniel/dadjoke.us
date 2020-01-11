@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import './Card.scss';
+
+import myVideo from '../assets/video/offerman.mp4';
 
 function Card() {
 
@@ -15,11 +18,10 @@ function Card() {
   }, [anotherJoke])
   
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>{joke}</p>
-        <button onClick={() => setAnotherJoke(!anotherJoke)}>Get a joke!</button>
-      </header>
+    <div className="Card">
+      <video src={myVideo} type="video/mp4" autoPlay loop />
+      <p>{joke}</p>
+      <button onClick={() => setAnotherJoke(!anotherJoke)}>Show me another!</button>
     </div>
   )
 }
