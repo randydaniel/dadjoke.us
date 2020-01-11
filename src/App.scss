@@ -1,10 +1,37 @@
 .App {
-  background-color: #282c34;
+  background-color: #fbfaf6;
+  color: #000;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 1rem;
+  // Grid layout
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  grid-column-gap: 0rem;
+  grid-row-gap: 0rem;
+
+  header, main, footer {
+    grid-column-start: 1;
+    grid-column-end: 1;
+  }
+
+  header {
+    // Grid placement
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+
+  main {
+    align-self: center;
+    justify-self: center;
+    // Grid placement
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  footer {
+    // Grid placement
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
 }

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Kumar+One+Outline&display=swap');
+
+header {
+  text-align: center;
+
+  h1 {
+    font-family: 'Kumar One Outline', cursive;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .App-logo {
+    height: 100px;
+    pointer-events: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: App-logo-spin infinite 20s linear;
+    }
+
+    @keyframes App-logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
