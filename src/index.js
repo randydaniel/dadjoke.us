@@ -4,11 +4,6 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// Analytics
-import ReactGA from 'react-ga';
-
-ReactGA.initialize('UA-55197164-8');
-
 const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
 
