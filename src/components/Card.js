@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Card.scss';
 
 import bars from '../assets/images/bars.svg';
-import myVideo from '../assets/video/joeybadass.mp4';
+import myVideo from '../assets/video/offerman.mp4';
 
 function Card() {
 
